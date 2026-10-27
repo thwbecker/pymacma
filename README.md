@@ -35,6 +35,8 @@ written from the two papers and from reading the released C++ source; no C++
 code was translated line by line, but the rules and formulas follow that
 source closely where it differs from the papers (see below).
 
+**Repository.** https://github.com/thwbecker/pymacma
+
 **Status.** This is not an official release of MACMA and has not been
 reviewed by the original authors. It reproduces several published results
 (see "Checks against the paper"), but results that matter should be checked
@@ -59,7 +61,8 @@ tests/                    test suite (pytest)
 paper_figures_quick/      figures made with --mode quick (see below)
 ```
 
-Requirements: Python 3.11 or later, numpy, matplotlib; pytest for the tests.
+Requirements: Python 3.11 or later, numpy, matplotlib; pytest for the tests
+(`pip install -r requirements.txt`).
 No installation step is needed; run commands from this directory.
 
 ## Quick start
@@ -380,4 +383,3 @@ Related later work that may be useful for comparisons:
 - Cao, X., et al. (2024). Earth's tectonic and plate boundary evolution over
   1.8 billion years. *Geoscience Frontiers*. Reports RMS plate speeds of
   4-7 cm/yr between 1.8 and 1.0 Ga, which can be compared with Fig. 6b.
-# pymacma
