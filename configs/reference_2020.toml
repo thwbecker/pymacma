@@ -1,0 +1,74 @@
+# pymacma parameters: 2020 reference case (MACMA doc/configs/config.macma).
+# Copy and edit; use with --config file.toml. Units as in the comments.
+# Values not listed keep their defaults. 'inf' is allowed for F_lim.
+
+[params]
+
+# planet and thermal constants
+R_E                = 6371e3     # Earth radius (m)
+g                  = 10.0       # gravity (m/s^2)
+d                  = 2900e3     # mantle thickness (m)
+D                  = 670e3      # upper-mantle thickness (m)
+T_surf             = 300.0      # surface temperature (K); paper Table 1: 273 K
+kappa              = 8e-7       # thermal diffusivity (m^2/s)
+C_p                = 1200.0     # heat capacity (J/kg/K)
+k_ocean            = 3.0        # oceanic lithosphere conductivity (W/m/K)
+M_earth            = 5.9736e24  # mass in the secular cooling term M C_p dT/dt (kg)
+M_mantle           = 4.079e24   # mantle mass, for radiogenic heating (kg)
+cont_frac          = 0.40       # continental fraction of the surface
+rho_cont           = 2700.0     # continental crust density, for its mass (kg/m^3)
+cont_thick         = 40e3       # continental crust thickness, for its mass (m)
+
+# rheology and densities (reference values at T_p)
+T_p                = 1625.0     # present-day reference mantle temperature (K)
+eta_lm_p           = 5e22       # lower-mantle viscosity at T_p (Pa s)
+eta_um_p           = 5e20       # upper-mantle viscosity at T_p (Pa s)
+eta_pl_p           = 1.25e23    # plate (bending) viscosity at T_p (Pa s)
+E                  = 350e3      # activation energy, all layers (J/mol), Eq. 2
+rho_um_p           = 3300.0     # upper-mantle density at T_p (kg/m^3)
+drho_p             = 65.0       # slab density excess at T_p (kg/m^3)
+alpha_um           = 2e-5       # mantle thermal expansivity (1/K)
+alpha_pl           = 3.5e-5     # plate expansivity, ridge push and densities (1/K)
+rho_dep_T          = true       # temperature-dependent densities (code default)
+R_min              = 300e3      # minimum radius of curvature at trenches (m)
+V_sink_p           = 1.0        # present slab sinking speed in the lower mantle (cm/yr)
+slab_max_depth     = 2800e3     # slabs stop lengthening at this depth (m)
+
+# behaviour laws
+si_mode            = "brittle"  # critical age law: 'brittle' (Eq. 11),
+                               # 'convective' (C12 Eq. 21) or 'constant'
+tau_sub_p          = 180.0      # present-day critical age for subduction (Myr)
+tau_sub_noise      = 20.0       # uniform noise on the critical age, redrawn at
+                               # every check (Myr); 0 switches it off
+si_at_staples      = true       # allow subduction initiation at staples
+si_at_continents   = true       # ... and at passive margins
+init_depth_factor  = 0.1        # new slab depth = factor * plate thickness
+near_interface     = 0.02       # no initiation closer than this to a boundary (deg)
+F_lim              = 2e12       # continental strength (N/m); inf: no breakup
+h_warm             = 350e3      # subcontinental warming layer thickness b (m)
+breakup_spread     = 0.333      # rift position: middle +/- spread * width
+breakup_requires   = "both"     # trenches needed on the continent's plate:
+                               # 'both' (code) or 'one' (2020 text)
+fixed              = false      # fixed plate boundaries (2020 section 3.1)
+
+# radiogenic heating (ppm)
+U_BSE              = 0.020      # bulk silicate Earth (McDonough & Sun, 1995)
+Th_BSE             = 0.079      
+K_BSE              = 240.0      
+U_cont             = 1.30       # continental crust (Rudnick & Gao, 2003)
+Th_cont            = 5.60       
+K_cont             = 1.5e4      
+# H_constant = 13.0   # if set, constant radiogenic power (TW)
+
+# numerics
+dx                 = 0.5        # node spacing and CFL length (deg); paper: 0.25
+courant            = 0.5        # Courant number
+dt_max             = 5e4        # maximum time step (yr); paper: 5000
+dt_min             = 1.0        # minimum time step (yr), except for events
+
+
+# settings of make_paper_figures.py (optional)
+[figures]
+# n_ens = 200
+# n_sweep = 50
+# procs = 8
