@@ -25,7 +25,7 @@ co-workers and is described in:
 The original C++/Qt implementation by C. Grigné is available at
 https://github.com/cecgri/MACMA (release v0.1-beta, archived as
 https://doi.org/10.5281/zenodo.3946077), under the GNU General Public License
-v2.0 or later.
+v3.0 or later.
 
 **This implementation.** The Python code, tests, figure script and this
 README were written by Claude (Anthropic, model Claude Opus 5.5) in October
@@ -44,7 +44,7 @@ against the original code.
 
 **License.** Because this package follows the logic of the GPL-licensed
 original closely, it may be prudent to treat it as a derivative work and
-distribute it under GPL-2.0-or-later as well.
+distribute it under GPL-3.0-or-later as well.
 
 ## Contents
 

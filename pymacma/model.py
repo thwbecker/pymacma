@@ -15,7 +15,7 @@ model of plate tectonics and Earth's thermal history:
   Geochem. Geophys. Geosyst., 21, e2020GC009123. doi:10.1029/2020GC009123
 
   Original C++/Qt code: C. Grigne, https://github.com/cecgri/MACMA
-  (v0.1-beta, doi:10.5281/zenodo.3946077, GPL-2.0-or-later)
+  (v0.1-beta, doi:10.5281/zenodo.3946077, GPL-3.0-or-later)
 
 Where the papers and the released C++ code differ, this module follows the
 code (see README.md for the list). Equation numbers in comments refer to the
